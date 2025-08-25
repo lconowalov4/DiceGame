@@ -5,35 +5,40 @@ def action(choice):
     h_sum = b_sum = 0
     print("Start playing the game now!")
     t.sleep(1)
+    humanNames = ['Michael', 'Emma', 'Daniel', 'Sophia', 'Lucas', 'Olivia']
+    randomHumanName = random.choice(humanNames)
+
+    botNames = ['EVA', 'NEXA', 'LUMI', 'KORA', 'GLADoS', 'AIDA']
+    randomBotName = random.choice(botNames)
 
     for dice in range(choice):
         person = random.randint(1,6)
         t.sleep(1)
-        print("Human got:", person)
+        print(randomHumanName + " got:", person)
         h_sum += person
 
     t.sleep(1)
-    print("\nTotal sum of Human is:", h_sum)
+    print("\nTotal sum of " + randomHumanName  + " is:", h_sum)
     t.sleep(1)
-    print("\nNow it's the turn for the bot")
+    print("\nNow it's the turn for the " + randomBotName)
     t.sleep(1)
 
     for dice in range(choice):
         bot = random.randint(1,6)
         t.sleep(1)
-        print("Bot got:", bot)
+        print(randomBotName + " got:", bot)
         b_sum += bot
 
     t.sleep(1)
-    print("\nTotal sum of Bot is:", b_sum)
+    print("\nTotal sum of " + randomBotName + " is:", b_sum)
     t.sleep(2)
 
     if h_sum > b_sum:
-        print("\nHuman won")
+        print("\n" + randomHumanName + "won")
     elif h_sum < b_sum:
-        print("\nBot won")
+        print("\n" + randomBotName + " won")
     else:
-        print("\nIt's a tie between Human and Bot")
+        print("\nIt's a tie between " + randomHumanName + " and " + randomBotName)
 
 
 def play():
